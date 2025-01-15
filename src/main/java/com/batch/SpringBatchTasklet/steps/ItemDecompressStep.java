@@ -19,6 +19,11 @@ import java.util.zip.ZipFile;
 @Slf4j
 public class ItemDecompressStep implements Tasklet {
 
+    /*
+     * Este paso descomprime el archivo que se envia a traves del request
+     *
+     * */
+
     @Autowired
     private ResourceLoader resourceLoader;
 

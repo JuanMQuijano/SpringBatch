@@ -27,6 +27,14 @@ import java.util.Map;
 @RequestMapping("/v1")
 public class BatchController {
 
+    /*
+     *
+     * Inyectamos el jobLauncher para arrancar el Job, tambien inyectamos el Job que hemos configurado en la clase BatchConfiguration
+     * junto con los parámetros que hemos establecido, a la vez, obtenemos el archivo enviado en la request, extraemos la ruta, creamos el directorio
+     * reemplazamos si ya existia previamente
+     *
+     * */
+
     @Autowired
     private JobLauncher jobLauncher;
 

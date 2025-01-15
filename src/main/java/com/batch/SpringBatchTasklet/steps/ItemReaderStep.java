@@ -21,6 +21,14 @@ import java.util.List;
 @Slf4j
 public class ItemReaderStep implements Tasklet {
 
+    /*
+     *
+     *  Este paso procesa el archivo descomprimido y separa cada uno de los registros del csv por commas (,)
+     *  posteriormente cada registro lo agrega a una lista que será agregada en el contexto global del job para despues
+     *  ser accedida en otro(s) pasos
+     *
+     * */
+
     @Autowired
     private ResourceLoader resourceLoader;
 

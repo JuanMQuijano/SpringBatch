@@ -21,6 +21,12 @@ import org.springframework.transaction.PlatformTransactionManager;
 @EnableBatchProcessing
 public class BatchConfiguration {
 
+    /*
+     *
+     * Creamos Beans con cada uno de los pasos que habiamos creado previamente para inyectarlos posteriormente
+     *
+     * */
+
     @Bean
     @JobScope
     public ItemDecompressStep itemDecompressStep() {
@@ -44,6 +50,12 @@ public class BatchConfiguration {
     public ItemWriterStep itemWriterStep() {
         return new ItemWriterStep();
     }
+
+    /*
+     *
+     * Creamos la ejecución de cada uno de los pasos
+     *
+     * */
 
     @Bean
     public Step decompressFileStep(JobRepository jobRepository, PlatformTransactionManager transactionManager) {
@@ -72,6 +84,13 @@ public class BatchConfiguration {
                 .tasklet(itemWriterStep(), transactionManager)
                 .build();
     }
+
+    /*
+     *
+     *  Establecemos el job enviando como parametros cada uno de los pasos que va a ejecutar y retornamos el job construido con el orden en el que se
+     *  ejecutarán los pasos, primero descomprime, luego lee, luego procesa y por último escribe en BBDD
+     *
+     * */
 
     @Bean
     public Job readCSVJob(

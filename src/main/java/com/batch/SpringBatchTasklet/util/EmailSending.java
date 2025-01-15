@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailSending {
 
+    //Clase implementada para el envío de email a un usuario que se encuentre en el csv
     @Autowired
     private JavaMailSender mailSender;
 

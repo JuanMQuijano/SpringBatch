@@ -16,6 +16,12 @@ import java.util.List;
 @Slf4j
 public class ItemWriterStep implements Tasklet {
 
+    /*
+     * Este paso se encarga de recuperar la lista del contexto global del job, por cada uno de los registros incluidos
+     * en la lista envia un email y realiza el registro en la base de datos
+     *
+     * */
+
     @Autowired
     private IPersonService personService;
 

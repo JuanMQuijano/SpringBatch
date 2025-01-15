@@ -14,6 +14,12 @@ import java.util.List;
 @Slf4j
 public class ItemProcessorStep implements Tasklet {
 
+    /*
+     * Este paso obtiene la lista del contexto global, establece un valor nuevo para cada uno de los registros que hay en la lista
+     * y actualiza la lista en el contexto global
+     *
+     * */
+
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 
