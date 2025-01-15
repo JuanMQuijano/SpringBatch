@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: SpringBatchTasklet
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: true
+  mail:
+    host: 'sandbox.smtp.mailtrap.io'
+    port: 2525
+    username: '6775a4968bfba7'
+    password: '295b79550253db'
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
